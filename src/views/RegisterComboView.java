@@ -12,10 +12,10 @@ import controllers.HomeController;
  */
 public class RegisterComboView extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form NewJInternalFrame
-     */
-    public RegisterComboView() {
+    private String type;
+    
+    public RegisterComboView(String type) {
+        this.type = type;
         initComponents();
     }
 
@@ -109,7 +109,19 @@ public class RegisterComboView extends javax.swing.JInternalFrame {
         String acomp = acompField.getText();
         String extra = extraField.getText();
         
-        HomeController.registrarComboHamburguesa(bebida, acomp, extra);
+        switch (type) {
+            case "hamburguesa":
+                HomeController.registrarComboHamburguesa(bebida, acomp, extra);
+                break;
+            case "pollo":
+                HomeController.registrarComboPollo(bebida, acomp, extra);
+                break;
+            case "vegetariano":
+                HomeController.registrarComboVegetariano(bebida, acomp, extra);
+                break;
+            default:
+                break;
+        }
         
         dispose();
     }//GEN-LAST:event_registerButtonActionPerformed

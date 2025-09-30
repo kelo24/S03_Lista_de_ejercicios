@@ -195,27 +195,23 @@ public class MainView extends javax.swing.JFrame {
     
     private void hamburguesaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hamburguesaButtonActionPerformed
         
-        RegisterComboView reg = new RegisterComboView();
+        RegisterComboView reg = new RegisterComboView("hamburguesa");
         windows.add(reg);
         reg.setVisible(true);
     }//GEN-LAST:event_hamburguesaButtonActionPerformed
 
     private void polloButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_polloButtonActionPerformed
         
-        RegisterComboView reg = new RegisterComboView();
+        RegisterComboView reg = new RegisterComboView("pollo");
         windows.add(reg);
         reg.setVisible(true);
-        
-        HomeController.registrarComboPollo();
     }//GEN-LAST:event_polloButtonActionPerformed
 
     private void vegetarianoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vegetarianoButtonActionPerformed
         
-        RegisterComboView reg = new RegisterComboView();
+        RegisterComboView reg = new RegisterComboView("vegetariano");
         windows.add(reg);
         reg.setVisible(true);
-        
-        HomeController.registrarComboVegetariano();
     }//GEN-LAST:event_vegetarianoButtonActionPerformed
 
     private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
