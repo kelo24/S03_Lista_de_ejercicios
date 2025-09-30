@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.table.DefaultTableModel;
 import models.Combo;
-import models.Pedido;
 
 
 public class MainView extends javax.swing.JFrame {
@@ -17,7 +16,6 @@ public class MainView extends javax.swing.JFrame {
         
     public MainView() {
         initComponents();
-        
         
         // Asignar modelo de tabla
         resumenTable.setModel(resumenModel);
@@ -195,21 +193,21 @@ public class MainView extends javax.swing.JFrame {
     
     private void hamburguesaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hamburguesaButtonActionPerformed
         
-        RegisterComboView reg = new RegisterComboView("hamburguesa");
+        RegisterComboView reg = new RegisterComboView("Hamburguesa");
         windows.add(reg);
         reg.setVisible(true);
     }//GEN-LAST:event_hamburguesaButtonActionPerformed
 
     private void polloButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_polloButtonActionPerformed
         
-        RegisterComboView reg = new RegisterComboView("pollo");
+        RegisterComboView reg = new RegisterComboView("Pollo");
         windows.add(reg);
         reg.setVisible(true);
     }//GEN-LAST:event_polloButtonActionPerformed
 
     private void vegetarianoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vegetarianoButtonActionPerformed
         
-        RegisterComboView reg = new RegisterComboView("vegetariano");
+        RegisterComboView reg = new RegisterComboView("Vegetariano");
         windows.add(reg);
         reg.setVisible(true);
     }//GEN-LAST:event_vegetarianoButtonActionPerformed
