@@ -2,6 +2,8 @@
 package views;
 
 import controllers.HomeController;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.table.DefaultTableModel;
 import models.Combo;
 import models.Pedido;
@@ -9,12 +11,16 @@ import models.Pedido;
 
 public class MainView extends javax.swing.JFrame {
     
-    // Inicializar
-    DefaultTableModel resumenModel = new DefaultTableModel();
-    
-    
+    // Crear modelo de tabla
+    String[] columnNames = {"ID", "Bebida", "Acompañamiento", "Extra"};
+    DefaultTableModel resumenModel = new DefaultTableModel(columnNames, 0);
+        
     public MainView() {
         initComponents();
+        
+        
+        // Asignar modelo de tabla
+        resumenTable.setModel(resumenModel);
     }
 
     /**
@@ -231,13 +237,13 @@ public class MainView extends javax.swing.JFrame {
         }
         
         // Agregar combos
-        Pedido pedido = HomeController.pedido;
-        System.out.println(pedido.getCombos().toString());
+        ArrayList<Combo> combos = HomeController.pedido.getCombos();
+        System.out.println(combos.toString());
         
-        String combo[] = new String[5];
-        
-        int i = 1;
-        for (Combo c : pedido.getCombos()) {
+        for (int i = 0; i < combos.size(); i++) {
+            Combo c = combos.get(i);
+            String[] combo = new String[5];
+            
             combo[0] = String.valueOf(i);
             combo[1] = c.getBase();
             combo[2] = c.getBebida();
@@ -245,7 +251,7 @@ public class MainView extends javax.swing.JFrame {
             combo[4] = c.getExtra();
             
             resumenModel.addRow(combo);
-            i++;
+            System.out.println(Arrays.toString(combo));
         }
     }//GEN-LAST:event_reloadTableActionPerformed
 
